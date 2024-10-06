@@ -11,6 +11,9 @@
 		8B54352F2CB13E1300E6B58A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54352E2CB13E1300E6B58A /* ContentView.swift */; };
 		8B5435312CB13E1500E6B58A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B5435302CB13E1500E6B58A /* Assets.xcassets */; };
 		8B5435352CB13E1500E6B58A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B5435342CB13E1500E6B58A /* Preview Assets.xcassets */; };
+		8B54353D2CB23F6000E6B58A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54353C2CB23F6000E6B58A /* Constants.swift */; };
+		8B54353F2CB23FD800E6B58A /* ImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54353E2CB23FD800E6B58A /* ImageLoaderView.swift */; };
+		8B5435422CB2409800E6B58A /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8B5435412CB2409800E6B58A /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,8 @@
 		8B5435302CB13E1500E6B58A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8B5435322CB13E1500E6B58A /* SpotifySwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpotifySwiftUI.entitlements; sourceTree = "<group>"; };
 		8B5435342CB13E1500E6B58A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8B54353C2CB23F6000E6B58A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8B54353E2CB23FD800E6B58A /* ImageLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B5435422CB2409800E6B58A /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +58,7 @@
 		8B54352B2CB13E1300E6B58A /* SpotifySwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				8B54353B2CB23F4D00E6B58A /* Shared */,
 				8B54352C2CB13E1300E6B58A /* SpotifySwiftUIApp.swift */,
 				8B54352E2CB13E1300E6B58A /* ContentView.swift */,
 				8B5435302CB13E1500E6B58A /* Assets.xcassets */,
@@ -67,6 +74,15 @@
 				8B5435342CB13E1500E6B58A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8B54353B2CB23F4D00E6B58A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8B54353C2CB23F6000E6B58A /* Constants.swift */,
+				8B54353E2CB23FD800E6B58A /* ImageLoaderView.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -85,6 +101,9 @@
 			dependencies = (
 			);
 			name = SpotifySwiftUI;
+			packageProductDependencies = (
+				8B5435412CB2409800E6B58A /* SDWebImageSwiftUI */,
+			);
 			productName = SpotifySwiftUI;
 			productReference = 8B5435292CB13E1300E6B58A /* SpotifySwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -113,6 +132,9 @@
 				Base,
 			);
 			mainGroup = 8B5435202CB13E1300E6B58A;
+			packageReferences = (
+				8B5435402CB2409800E6B58A /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 8B54352A2CB13E1300E6B58A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +162,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B54352F2CB13E1300E6B58A /* ContentView.swift in Sources */,
+				8B54353F2CB23FD800E6B58A /* ImageLoaderView.swift in Sources */,
+				8B54353D2CB23F6000E6B58A /* Constants.swift in Sources */,
 				8B54352D2CB13E1300E6B58A /* SpotifySwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,6 +379,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B5435402CB2409800E6B58A /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B5435412CB2409800E6B58A /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B5435402CB2409800E6B58A /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8B5435212CB13E1300E6B58A /* Project object */;
 }
