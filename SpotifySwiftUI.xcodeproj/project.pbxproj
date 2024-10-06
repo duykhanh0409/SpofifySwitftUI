@@ -14,6 +14,7 @@
 		8B54353D2CB23F6000E6B58A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54353C2CB23F6000E6B58A /* Constants.swift */; };
 		8B54353F2CB23FD800E6B58A /* ImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54353E2CB23FD800E6B58A /* ImageLoaderView.swift */; };
 		8B5435422CB2409800E6B58A /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8B5435412CB2409800E6B58A /* SDWebImageSwiftUI */; };
+		8B5435442CB2446E00E6B58A /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B5435432CB2446E00E6B58A /* DatabaseHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		8B5435342CB13E1500E6B58A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8B54353C2CB23F6000E6B58A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8B54353E2CB23FD800E6B58A /* ImageLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderView.swift; sourceTree = "<group>"; };
+		8B5435432CB2446E00E6B58A /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				8B54353C2CB23F6000E6B58A /* Constants.swift */,
 				8B54353E2CB23FD800E6B58A /* ImageLoaderView.swift */,
+				8B5435432CB2446E00E6B58A /* DatabaseHelper.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B54352F2CB13E1300E6B58A /* ContentView.swift in Sources */,
+				8B5435442CB2446E00E6B58A /* DatabaseHelper.swift in Sources */,
 				8B54353F2CB23FD800E6B58A /* ImageLoaderView.swift in Sources */,
 				8B54353D2CB23F6000E6B58A /* Constants.swift in Sources */,
 				8B54352D2CB13E1300E6B58A /* SpotifySwiftUIApp.swift in Sources */,
