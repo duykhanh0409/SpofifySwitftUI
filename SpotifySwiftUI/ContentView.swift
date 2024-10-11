@@ -13,8 +13,8 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             VStack {
-                ForEach(users) { user in
-                    Text(user.firstName)
+                ForEach(products) { product in
+                    Text(product.brand ?? "")
                 }
             }
             .padding()
