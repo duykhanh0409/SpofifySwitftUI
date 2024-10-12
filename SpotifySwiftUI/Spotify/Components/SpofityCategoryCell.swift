@@ -8,14 +8,26 @@
 import SwiftUI
 
 struct SpofityCategoryCell: View {
+    var title:String = "Music"
+    var isSelected: Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(title)
+            .font(.callout)
+            .padding(.vertical,8)
+            .padding(.horizontal,10)
+            .background(isSelected ? .spotifyGreen : .spotifyDarkGray)
+            .foregroundColor(isSelected ? .spotifyBlack : .spotifyWhite)
+            .cornerRadius(16)
     }
 }
 
 #Preview {
     ZStack {
         Color.black.ignoresSafeArea()
-        SpofityCategoryCell()
+        VStack(content: {
+            SpofityCategoryCell(title: "Title gose here")
+            SpofityCategoryCell(title: "Title gose here", isSelected: true)
+            SpofityCategoryCell(title: "Title gose here", isSelected: false)
+        })
     }
 }
