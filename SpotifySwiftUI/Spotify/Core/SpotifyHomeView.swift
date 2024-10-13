@@ -60,6 +60,9 @@ struct SpotifyHomeView: View {
                 HStack(spacing: 8, content: {
                     ForEach(CategoryList.allCases, id: \.self) { category in
                         SpofityCategoryCell(title: category.rawValue.capitalized, isSelected: category == selectedCategory)
+                            .onTapGesture {
+                                selectedCategory = category
+                            }
                         
                     }
                 })
