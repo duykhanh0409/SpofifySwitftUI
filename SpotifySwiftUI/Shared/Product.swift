@@ -33,6 +33,10 @@ struct Product: Codable, Identifiable {
     let meta: Meta
     let images: [String]
     let thumbnail: String
+    
+    var firstImage: String {
+        images.first ?? Constants.romdomImage
+    }
 }
 
 enum AvailabilityStatus: String, Codable {
@@ -80,3 +84,4 @@ struct Review: Codable {
     let date: CreatedAt
     let reviewerName, reviewerEmail: String
 }
+
