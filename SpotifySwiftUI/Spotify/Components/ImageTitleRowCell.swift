@@ -20,6 +20,7 @@ struct ImageTitleRowCell: View {
                 .font(.callout)
                 .foregroundStyle(.spotifyLightGray)
         }
+        .frame(width: imageSize)
     }
 }
 
