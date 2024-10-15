@@ -13,6 +13,7 @@ struct SpotifyHomeView: View {
     @State private var currentUser:User? = nil
     @State private var selectedCategory: CategoryList? = nil
     @State private var productList:[Product] = []
+    @State private var productRow:[ProductRow] = []
     
     var body: some View {
         ZStack {
@@ -24,24 +25,14 @@ struct SpotifyHomeView: View {
                     Section {
                         VStack{
                             recentsSection
+                                .padding(.horizontal,16)
                             if let product = productList.first {
                                 newReleaseSection(product: product)
+                                    .padding(.horizontal,16)
                             }
-                            VStack(spacing:8){
-                                Text("Category title")
-                                    .font(.title)
-                                    .fontWeight(.semibold)
-                                    .foregroundStyle(.spotifyWhite)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    
-                                ScrollView(.horizontal) {
-                                    HStack{
-                                        ForEach(0..<20){ _ in
-                                                ImageTitleRowCell()
-                                        }
-                                    }
-                                }
-                            }
+                            listRows
+                           
+                            
                         }
                     } header: {
                         header
@@ -64,6 +55,17 @@ struct SpotifyHomeView: View {
         do{
             currentUser = try await DatabaseHelper().getUser().first
             productList = try await Array(DatabaseHelper().getProducts().prefix(8))
+            
+            var rows: [ProductRow] = []
+            let allBrands = Set(productList.map({$0.brand}))
+            
+            for brand in allBrands {
+                guard let brand = brand else {return}
+//                let products = self.productList.filter({$0.brand == brand})
+                rows.append(ProductRow(title: brand.capitalized, products: productList))
+            }
+            
+            productRow = rows
         }catch {
             
         }
@@ -81,7 +83,7 @@ struct SpotifyHomeView: View {
             }).frame(width: 35, height: 35)
             
             ScrollView(.horizontal) {
-                HStack(spacing: 8, content: {
+                HStack(alignment:.top, spacing: 16, content: {
                     ForEach(CategoryList.allCases, id: \.self) { category in
                         SpofityCategoryCell(title: category.rawValue.capitalized, isSelected: category == selectedCategory)
                             .onTapGesture {
@@ -119,6 +121,28 @@ struct SpotifyHomeView: View {
                 
             }
         )
+    }
+    
+    private var listRows: some View {
+        ForEach(productRow) { row in
+            VStack(spacing:8){
+                Text(row.title)
+                    .font(.title)
+                    .fontWeight(.semibold)
+                    .foregroundStyle(.spotifyWhite)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal,16)
+                    
+                ScrollView(.horizontal) {
+                    HStack{
+                        ForEach(row.products){ product in
+                            ImageTitleRowCell(imageSize: 120, imageName: product.firstImage, title: product.title )
+                        }
+                    }
+                    .padding(.horizontal,16)
+                }
+            }
+        }
     }
 }
 
