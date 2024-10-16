@@ -18,6 +18,7 @@ struct SpotifyHomeView: View {
     var body: some View {
         ZStack {
             Color.spotifyBlack.ignoresSafeArea()
+            
             ScrollView(.vertical) {
                 LazyVStack(spacing: 1,
                            pinnedViews: [.sectionHeaders],
@@ -43,6 +44,7 @@ struct SpotifyHomeView: View {
             }
             .scrollIndicators(.hidden)
             .clipped()
+        
            
         }
         .task {
@@ -103,6 +105,9 @@ struct SpotifyHomeView: View {
         NonLazyVGrid(columns:2, alignment: .center, spacing: 10, items: productList) { product in
             if let product {
                 SpotifyRecentsCell(imageName: product.firstImage, title: product.title)
+                    .asButton(.press) {
+                        
+                    }
             }
         }
     }
@@ -137,6 +142,9 @@ struct SpotifyHomeView: View {
                     HStack{
                         ForEach(row.products){ product in
                             ImageTitleRowCell(imageSize: 120, imageName: product.firstImage, title: product.title )
+                                .asButton(.press) {
+                                    
+                                }
                         }
                     }
                     .padding(.horizontal,16)
