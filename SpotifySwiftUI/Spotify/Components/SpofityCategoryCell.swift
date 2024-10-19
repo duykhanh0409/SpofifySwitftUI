@@ -35,6 +35,7 @@ extension View{
             SpofityCategoryCell(title: "Title gose here")
             SpofityCategoryCell(title: "Title gose here", isSelected: true)
             SpofityCategoryCell(title: "Title gose here", isSelected: false)
+            SpofityCategoryCell(title: "Title gose here", isSelected: false)
         })
     }
 }
