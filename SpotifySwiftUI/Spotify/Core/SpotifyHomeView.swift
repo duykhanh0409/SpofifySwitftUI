@@ -63,7 +63,6 @@ struct SpotifyHomeView: View {
             
             for brand in allBrands {
                 guard let brand = brand else {return}
-//                let products = self.productList.filter({$0.brand == brand})
                 rows.append(ProductRow(title: brand.capitalized, products: productList))
             }
             

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SpotifyRecentsCell: View {
     var imageName: String = Constants.romdomImage
-    var title: String = "khanh nha khanh nksi khanh"
+    var title: String = "khanh nguyen"
     var body: some View {
         HStack(spacing: 16, content: {
            ImageLoaderView(urlString: imageName)
@@ -37,6 +37,11 @@ struct SpotifyRecentsCell: View {
                 SpotifyRecentsCell()
                 SpotifyRecentsCell()
             }
+            HStack{
+                SpotifyRecentsCell()
+                SpotifyRecentsCell()
+            }
+            
             HStack{
                 SpotifyRecentsCell()
                 SpotifyRecentsCell()
